@@ -1,3 +1,4 @@
+
 const myLibrary = [];
 
 
@@ -55,3 +56,19 @@ function addUserBookToLibrary (formInputs) {
         e.preventDefault();
         addUserBookToLibrary();
     })
+
+const bodyDiv = document.querySelector(".bodyDiv");
+const bookDisplayDOM = document.createElement("div");
+
+bookDisplayDOM.style.backgroundColor = "pink";
+bookDisplayDOM.style.borderRadius = "1rem";
+bookDisplayDOM.style.width = "240px";
+bookDisplayDOM.style.height = "300px";
+
+
+// document.body.appendChild(bookDisplayDOM);
+bodyDiv.appendChild(bookDisplayDOM)
+
+console.log(userBook.textContent)
+
+// bookDisplayDOM.appendChild(userBook)
