@@ -23,3 +23,35 @@ function addBookToLibrary (title, author, pages, readstatus) {
 console.log(addBookToLibrary("Oliver Twist", "Charles Dickens", "342", "Read"));
 
 console.log(myLibrary)
+
+
+
+
+const getForm = document.getElementById("usersBook");
+const titleInput = document.getElementById("title");
+const authorInput = document.getElementById("author");
+const pagesInput = document.getElementById("pages");
+const readStatusInput = document.getElementById("readstatus");
+const userSubmitButton = document.getElementById("userSubmit");
+
+const formInputs = [titleInput, authorInput, pagesInput, readStatusInput];
+
+function addUserBookToLibrary (formInputs) {
+   const title = titleInput.value;
+    const author = authorInput.value;
+   const pages = pagesInput.value;
+   const readstatus = readStatusInput.value;
+
+
+    let userBook = new Books(title, author, pages, readstatus);
+    myLibrary.push(userBook);
+
+    getForm.reset();
+    console.log(userBook.info());
+
+}
+
+    userSubmitButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        addUserBookToLibrary();
+    })
